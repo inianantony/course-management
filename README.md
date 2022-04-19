@@ -93,3 +93,10 @@
    - ES class `class Hello extends React.Component { render() { return (<p>Hi</p>); } }`
    - Function Component `function Hello(props) { return (<p>Hi</p>); }`
    - Arrow function `const Hello = (props) => <p>Hi</p>`
+   - Prefer Functional components
+   - Container components are concerned with behaviour and littl/no markup. These are responsible for passing the data / actions to child components and they hold the state.
+   - Presentation components contain all the markup and they receive the data from the container components through props and are not stateful
+6. Folder structure
+   - src/components
+   - each module of the application is in a seperate folder as src/components/login
+   - Add about and home modules
