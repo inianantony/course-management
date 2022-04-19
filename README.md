@@ -69,3 +69,20 @@
 | webpack-bundle-analyzer            | Generate report of what's in the app's production bundle         |
 | webpack-cli                        | Run Webpack via the command line                                 |
 | webpack-dev-server                 | Serve app via Webpack                                            |
+
+## Points
+
+1. Add index file to mound our app inside src folder
+2. Add entry point for the app with index.js inside src folder
+   - Import React, render from react and react-dom
+   - render a simple `<Hi/>` component
+3. Use webpack to deliver our app
+   - webpack has a local webserver that delivers our app
+   - Its common to have webpack config for dev and prod in the root folder
+   - since we are using node, we will use the commonJS syntax like `require` & `module.exports` in the webpack config
+   - we configure the NODE_ENV as development
+   - In development the bundelled files are delivered from memory
+4. Configuring Babel
+   - To trnaspile moden js & jasx to any browser with ES5 standard
+   - Can be configured through package.json under the section `babel` or through its own config file
+   - Use the preset for react so that it configures babel for all the required settings
