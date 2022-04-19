@@ -82,7 +82,14 @@
    - since we are using node, we will use the commonJS syntax like `require` & `module.exports` in the webpack config
    - we configure the NODE_ENV as development
    - In development the bundelled files are delivered from memory
-4. Configuring Babel
+4. Configuring Babel & ESLint
    - To trnaspile moden js & jasx to any browser with ES5 standard
    - Can be configured through package.json under the section `babel` or through its own config file
    - Use the preset for react so that it configures babel for all the required settings
+   - ESLint is also configured from package.json under the section `eslintConfig`
+   - Set up webpack to file watch for us and lint any errors by changing the module loaders and add `eslint-loader`
+5. Four ways of creating react components
+   - createClass `React.createClass({ render: function(){ return (<p>Hi</p>); } } );`
+   - ES class `class Hello extends React.Component { render() { return (<p>Hi</p>); } }`
+   - Function Component `function Hello(props) { return (<p>Hi</p>); }`
+   - Arrow function `const Hello = (props) => <p>Hi</p>`
