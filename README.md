@@ -129,3 +129,11 @@
      loadUsers,
    };
    ```
+8. Redux middleware ( we are using `redux-thunk` , the other popular one is `redux-saga`)
+   - Redux middleware runs betwen the action and the action reaching the reducer.
+   - In redux actions are synchronous and they must return an object and so to handle async calls we use a middleware
+   - Normally we return an action from the ActionCreators, with redux-thunk we return a function
+   - Thunk takes in the stores `dispatch` and `getState` parameters and they are passed automatically by the middleware
+   - redux-think is configured when we create the store and is used in the applyMiddleware function call
+9. Others
+   - We use webpack `webpack.DefinePlugin` to publish the api url into the environment variable
