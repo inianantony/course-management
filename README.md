@@ -104,7 +104,7 @@
    - Immutable store, Action trigger, Reducer
    - store is created in App's entry point by using `createStore(reducer);`
    - Reducers are pure functions, no mutations or sideeffects, no randon, no datetime, no api calls etc
-   - `React-Redux` has `Provider` component which attaches the entire `app` to the redux `store`. `Connect` is a function which connects components to the redux store
+   - `React-Redux` has `Provider` component which attaches the entire `app` to the redux `store`. `Connect` is a function which connects components to the redux store for specific states
    - Provider component is used to wrap app's top level component to the store
    - Connect function wraps the component so that its connected to the store
    - Connect function has two optional parameters mapStateToProps and mapDispatchToProps. mapStateToProps is used to map a set of values from the state and to alter the shape of the state as needed for the component. mapDispatchToProps is used to map which actions are exposed to dispatch so that it can update the state. The mapDispatchToProps can be ingored to the connect function and in this case the dispatch menthod is available to the component and the component need to use, `this.props.discpatch(loadUsers());`. We can also manually wrap the mapdispatchTo Props
