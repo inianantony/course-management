@@ -14,12 +14,13 @@ function ManageCoursesPage(props) {
       props.loadCourses().catch((error) => {
         alert(`Loading cources failed ${error}`);
       });
+    else setCourse({ ...props.course });
 
     if (props.authors.length === 0)
       props.loadAuthors().catch((error) => {
         alert(`Loading cources failed ${error}`);
       });
-  }, []);
+  }, [props.course]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -54,11 +55,21 @@ ManageCoursesPage.propTypes = {
   loadCourses: PropTypes.func.isRequired,
   loadAuthors: PropTypes.func.isRequired,
   saveCourse: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
-function mapStateToProps(state) {
+export function getCourseBySlug(courses, slug) {
+  return courses.find((course) => course.slug === slug) || null;
+}
+
+function mapStateToProps(state, ownProps) {
+  const slug = ownProps.match.params.slug;
+  const course =
+    slug && state.courses.length > 0
+      ? getCourseBySlug(state.courses, slug)
+      : newCourse;
   return {
-    course: newCourse,
+    course,
     courses: state.courses,
     authors: state.authors,
   };
